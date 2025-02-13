@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Macrobox</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <div class="main-container">
+    <header class="top">
+      <p>Macrobox</p>
+      <div class="top-btn">
+        <button class="dot-close" id="dot-close"></button>
+        <button class="dot-minimize" id="dot-minimize"></button>
+        <button class="dot-fixed" id="dot-fixed"></button>
+      </div>
+    </header>
+    <header class="header">
+      <div class="create-label">
+        <button class="fa-regular fa-plus" id="create-macro"></button>
+        <p>criar nova nota</p>
+      </div>
+      <ul class="content-macro" id="content-macro">
+        <li class="content-macro-item">
+          <h2 class="title-content">Boas vindas</h2>
+          <i class="fa-regular fa-clipboard"></i>
+        </li>
+      </ul>
+    </header>
+  </div>
+  <script src="renderer.js" defer></script>
+</body>
+
+</html>

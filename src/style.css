@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+:root {
+    --roxo: rgb(67, 42, 75);
+    --roxoDark: rgb(47, 26, 54);
+    --amarelo: rgb(221, 192, 138);
+    --amareloDark: rgba(221, 192, 138, .3)
+    ;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    border-radius: 16px;
+}
+
+body {
+    font-family: -apple-system, 'Inter', sans-serif;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    -webkit-app-region: drag;
+    overflow: hidden;
+    background: transparent;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+}
+
+.create-label {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    width: 100%;
+    padding: 1rem 18px;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(221, 192, 138, .3);
+}
+
+.create-label button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgb(221, 192, 138);
+    font-size: large;
+}
+
+.content-macro{
+    width: 100%;
+}
+
+.content-macro-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(221, 192, 138, .3);
+    padding: 0 10px;
+}
+
+.content-macro-item i {
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.top {
+    display: flex;
+    background-color: var( --roxoDark);
+    padding: .8rem 1rem;
+    border-radius: 16px 16px 0 0;
+    border-bottom: 1px solid var(--amareloDark);
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top p {
+    font-size: 12px;
+}
+
+.top-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.dot-close {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(172, 52, 52);
+    cursor: pointer;
+}
+
+.dot-minimize {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(211, 188, 86);
+    cursor: pointer;
+}
+
+.dot-fixed {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(105, 212, 186);
+    cursor: pointer;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-color:var(--roxo);
+    color: rgb(221, 192, 138);
+    border-radius: 16px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
