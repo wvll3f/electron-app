@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>new</title>
+    <link rel="stylesheet" href="style-create.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="top">
+            <p>Macrobox</p>
+            <div class="top-btn">
+                <button class="dot-close-macro" id="dot-close-macro"></button>
+                <button class="dot-minimize-macro" id="dot-minimize-macro"></button>
+                <button class="dot-fixed-macro" id="dot-fixed-macro"></button>
+            </div>
+        </header>
+        <div>
+            <form id="meu-formulario">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required maxlength="100" placeholder="Digite o título aqui" />
+              
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite a mensagem aqui"></textarea>
+              
+                <button class="btn-submit" type="submit">Enviar</button>
+              </form>
+              
+        </div>
+    </div>
+    <script src="renderer.js" defer></script>
+</body>
+
+</html>

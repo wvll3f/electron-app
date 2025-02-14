@@ -30,15 +30,15 @@ async function loadMacros() {
 function addMacroToList(macro) {
     const macroList = document.getElementById('content-macro');
     const li = document.createElement('li')
-    const h2 = document.createElement('h2')
+    const h3 = document.createElement('h3')
     const i = document.createElement('i');
     i.classList.add('fa-regular')
     i.classList.add('fa-clipboard')
-    h2.classList.add('title-content');
-    h2.textContent = macro.title;
+    h3.classList.add('title-content');
+    h3.textContent = macro.title;
     li.classList.add('content-macro-item');
-    li.id =macro.id;
-    li.appendChild(h2);
+    li.id=macro.id;
+    li.appendChild(h3);
     li.appendChild(i);
     macroList.appendChild(li);
 }

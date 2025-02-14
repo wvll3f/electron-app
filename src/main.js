@@ -11,25 +11,47 @@ const createMacroWindow = () => {
   const father = BrowserWindow.getFocusedWindow()
   if (father) {
     const macroWindow = new BrowserWindow({
-      maxWidth: 500,
-      maxHeight: 250,
+      width: 500,
+      height: 350,
       fixed: false,
       resizable: true,
       transparent: true,
       roundedCorners: true,
       autoHideMenuBar: true,
-      frame:false,
+      frame: false,
       modal: true,
       webPreferences: {
-        preload: path.join(__dirname, 'preload.js'),
+        preload: path.join(__dirname, '/createview/preload.js'),
+        nodeIntegration: false,
+        contextIsolation: true
       },
     });
-    macroWindow.loadFile(path.join(__dirname, 'create.html'));
-  }
+    macroWindow.loadFile(path.join(__dirname, '/createview/create.html'));
 
-  ipcMain.on('close-app', () => {
-    mainWindow.close();
-  });
+    ipcMain.on('close-app-macro', () => {
+      try {
+        macroWindow.close();
+      } catch (error) {
+        console.error(error)
+      }
+    });
+
+    ipcMain.on('send-message', (event, dados) => {
+      const { titulo, mensagem } = dados;
+
+      const stmt = db.prepare('INSERT INTO macro (title, message) VALUES (?, ?)');
+      stmt.run(titulo, mensagem, (err) => {
+        if (err) {
+          console.error('Erro ao inserir dados:', err);
+        } else {
+          console.log('Dados inseridos com sucesso!');
+        }
+      });
+
+      stmt.finalize();
+    });
+
+  }
 };
 
 const createWindow = () => {
@@ -105,6 +127,7 @@ const createWindow = () => {
   });
 
   ipcMain.on('new-macro-window', () => {
+    console.log(__dirname)
     createMacroWindow()
   })
 };

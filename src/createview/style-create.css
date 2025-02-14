@@ -2,8 +2,7 @@
     --roxo: rgb(67, 42, 75);
     --roxoDark: rgb(47, 26, 54);
     --amarelo: rgb(221, 192, 138);
-    --amareloDark: rgba(221, 192, 138, .3)
-    ;
+    --amareloDark: rgba(221, 192, 138, .3);
 }
 
 * {
@@ -25,6 +24,12 @@ body {
     overflow: hidden;
     background: transparent;
 }
+input {
+    -webkit-app-region: no-drag;
+}
+textarea {
+    -webkit-app-region: no-drag;
+}
 
 button {
     display: flex;
@@ -39,7 +44,7 @@ button {
 
 .top {
     display: flex;
-    background-color: var( --roxoDark);
+    background-color: var(--roxoDark);
     padding: .8rem 1rem;
     border-radius: 16px 16px 0 0;
     border-bottom: 1px solid var(--amareloDark);
@@ -57,7 +62,7 @@ button {
     gap: 10px;
 }
 
-.dot-close {
+.dot-close-macro {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -65,7 +70,7 @@ button {
     cursor: pointer;
 }
 
-.dot-minimize {
+.dot-minimize-macro {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -73,7 +78,7 @@ button {
     cursor: pointer;
 }
 
-.dot-fixed {
+.dot-fixed-macro {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -84,7 +89,49 @@ button {
 .main-container {
     width: 100vw;
     height: 100vh;
-    background-color:var(--roxo);
+    background-color: var(--roxo);
     color: rgb(221, 192, 138);
     border-radius: 16px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    background-color: var(--amarelo);
+    color: var(--roxoDark);
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    font-family: -apple-system, 'Inter', sans-serif;
+    color: var(--roxoDark);
+}
+
+.btn-submit {
+    padding: 10px 15px;
+    background-color: var(--amarelo);
+    color: var(--roxoDark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+button:hover {
+    background-color: var(--amarelo);
+    opacity: .5;
 }
