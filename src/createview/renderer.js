@@ -12,8 +12,8 @@ formulario.addEventListener('submit', function (event) {
     const titulo = document.getElementById('titulo').value;
     const mensagem = document.getElementById('mensagem').value;
 
-    console.log('Título:', titulo);
-    console.log('Mensagem:', mensagem);
+    ('Título:', titulo);
+    ('Mensagem:', mensagem);
     
     window.electronAPI.sendMessage({ titulo, mensagem });
 

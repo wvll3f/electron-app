@@ -9,7 +9,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados', err);
     } else {
-        console.log('Conectado ao banco de dados SQLite');
+        ('Conectado ao banco de dados SQLite');
         createTable();
     }
 });
@@ -28,7 +28,7 @@ function createTable() {
         if (err) {
             console.error('Erro ao criar tabela', err);
         } else {
-            console.log('Tabela macro criada ou já existente');
+            ('Tabela macro criada ou já existente');
         }
     });
 }
@@ -39,7 +39,7 @@ function getAllMacro(title, message) {
             throw err;
         }
         rows.forEach((row) => {
-            console.log(row);
+            (row);
         });
     })
 }
